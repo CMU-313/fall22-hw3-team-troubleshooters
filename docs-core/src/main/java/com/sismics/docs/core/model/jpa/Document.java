@@ -52,6 +52,43 @@ public class Document implements Loggable {
      */
     @Column(name = "DOC_DESCRIPTION_C", length = 4000)
     private String description;
+
+    /** 
+    * GPA.
+    */
+    @Column(name = "DOC_GPA_C")
+    private float gpa;
+
+    /**
+     * Description.
+     */
+    @Column(name = "DOC_AGE_C")
+    private int age;
+
+    /**
+     * Gender.
+     */
+    @Column(name = "DOC_GENDER_C", length = 36)
+    private String gender;
+
+    /**
+     * Experience Score (1-10) range.
+     */
+    @Column(name = "DOC_EXPERIENCE_C")
+    private int experience;
+
+    /**
+     * Skills Score (1-10) range.
+     */
+    @Column(name = "DOC_SKILLS_C")
+    private int skills;
+
+    /**
+     * Program: MBA, MSCS, MSISM
+     */
+    @Column(name = "DOC_PROGRAM_C", length = 100)
+    private String program;
+
     
     /**
      * Subject.
@@ -166,6 +203,54 @@ public class Document implements Loggable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public float getGPA() {
+        return gpa;
+    }
+
+    public void setGPA(float gpa) {
+        this.gpa = gpa;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    public int getSkills() {
+        return skills;
+    }
+
+    public void setSkills(int skills) {
+        this.skills = skills;
+    }
+
+    public String getProgram() {
+        return program;
+    }
+
+    public void setProgram(String program) {
+        this.program = program;
     }
     
     public String getSubject() {

@@ -67,6 +67,18 @@ public class TestDocumentResource extends BaseJerseyTest {
                 .put(Entity.form(new Form()
                         .param("title", "My super title document 1")
                         .param("description", "My super description for document 1")
+
+                        /**
+                         * create document with new fields
+                         */
+                        .param("gpa", "4.0") 
+                        .param("age", "25") 
+                        .param("gender", "female") 
+                        .param("experience", "10") 
+                        .param("skills", "10") 
+                        .param("program", "Masters of Business Administration") 
+                        // end of new tests
+
                         .param("subject", "Subject document 1")
                         .param("identifier", "Identifier document 1")
                         .param("publisher", "Publisher document 1")
@@ -239,6 +251,16 @@ public class TestDocumentResource extends BaseJerseyTest {
         Assert.assertTrue(json.getBoolean("shared"));
         Assert.assertEquals("My super title document 1", json.getString("title"));
         Assert.assertEquals("My super description for document 1", json.getString("description"));
+
+        // start of new tests
+        Assert.assertEquals("4.0", json.getString("gpa"));
+        Assert.assertEquals("25", json.getString("age"));
+        Assert.assertEquals("female", json.getString("gender"));
+        Assert.assertEquals("10", json.getString("experience"));
+        Assert.assertEquals("10", json.getString("skills"));
+        Assert.assertEquals("Masters of Business Adminstration", json.getString("program"));
+        // end of new tests
+
         Assert.assertEquals("Subject document 1", json.getString("subject"));
         Assert.assertEquals("Identifier document 1", json.getString("identifier"));
         Assert.assertEquals("Publisher document 1", json.getString("publisher"));
@@ -288,7 +310,6 @@ public class TestDocumentResource extends BaseJerseyTest {
                 .cookie(TokenBasedSecurityFilter.COOKIE_NAME, document1Token)
                 .post(Entity.form(new Form()
                         .param("title", "My new super document 1")
-                        .param("description", "My new super description for document\r\n\u00A0\u0009 1")
                         .param("subject", "My new subject for document 1")
                         .param("identifier", "My new identifier for document 1")
                         .param("publisher", "My new publisher for document 1")

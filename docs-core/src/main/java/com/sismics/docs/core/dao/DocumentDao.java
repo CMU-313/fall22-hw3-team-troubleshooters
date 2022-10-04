@@ -212,6 +212,11 @@ public class DocumentDao {
         documentDb.setTitle(document.getTitle());
         documentDb.setDescription(document.getDescription());
         documentDb.setGPA(document.getGPA());
+        documentDb.getAge(document.getAge());
+        documentDb.getGender(document.getGender());
+        documentDb.getExperience(document.getExperience());
+        documentDb.getSkills(document.getExperience());
+        documentDb.getProgram(document.getProgram());
         documentDb.setSubject(document.getSubject());
         documentDb.setIdentifier(document.getIdentifier());
         documentDb.setPublisher(document.getPublisher());

@@ -56,13 +56,13 @@ public class Document implements Loggable {
     /** 
     * GPA.
     */
-    @Column(name = "DOC_GPA_C", length = 10)
+    @Column(name = "DOC_GPA_C", length = 36)
     private String gpa;
 
     /**
      * Description.
      */
-    @Column(name = "DOC_AGE_C", length = 10)
+    @Column(name = "DOC_AGE_C", length = 36)
     private String age;
 
     /**
@@ -74,13 +74,13 @@ public class Document implements Loggable {
     /**
      * Experience Score (1-10) range.
      */
-    @Column(name = "DOC_EXPERIENCE_C", length = 10)
+    @Column(name = "DOC_EXPERIENCE_C", length = 36)
     private String experience;
 
     /**
      * Skills Score (1-10) range.
      */
-    @Column(name = "DOC_SKILLS_C", length = 10)
+    @Column(name = "DOC_SKILLS_C", length = 36)
     private String skills;
 
     /**

@@ -45,6 +45,7 @@ public class TestJpa extends BaseTransactionalTest {
         //Create a document
         DocumentDao documentDao = new DocumentDao();
         Document document = new Document();
+        document.setUserId(user_id);
         document.setTitle("This is a new document.");
         document.setDescription("This is the description");
         document.setGPA("4.0");

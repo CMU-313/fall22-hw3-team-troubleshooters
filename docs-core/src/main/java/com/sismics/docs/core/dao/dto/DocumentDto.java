@@ -25,6 +25,11 @@ public class DocumentDto {
      * Description.
      */
     private String description;
+
+    /**
+     * Description.
+     */
+    private String gpa;
     
     /**
      * Subject.
@@ -142,6 +147,14 @@ public class DocumentDto {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getGPA() {
+        return gpa;
+    }
+
+    public void setGPA(String gpa) {
+        this.gpa = gpa;
     }
 
     public String getSubject() {

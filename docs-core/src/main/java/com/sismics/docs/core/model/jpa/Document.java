@@ -56,38 +56,38 @@ public class Document implements Loggable {
     /** 
     * GPA.
     */
-    @Column(name = "DOC_GPA_C")
+    @Column(name = "DOC_GPA_C", length = 10)
     private String gpa;
 
-    // /**
-    //  * Description.
-    //  */
-    // @Column(name = "DOC_AGE_C")
-    // private String age;
+    /**
+     * Description.
+     */
+    @Column(name = "DOC_AGE_C", length = 10)
+    private String age;
 
-    // /**
-    //  * Gender.
-    //  */
-    // @Column(name = "DOC_GENDER_C", length = 36)
-    // private String gender;
+    /**
+     * Gender.
+     */
+    @Column(name = "DOC_GENDER_C", length = 36)
+    private String gender;
 
-    // /**
-    //  * Experience Score (1-10) range.
-    //  */
-    // @Column(name = "DOC_EXPERIENCE_C")
-    // private String experience;
+    /**
+     * Experience Score (1-10) range.
+     */
+    @Column(name = "DOC_EXPERIENCE_C", length = 10)
+    private String experience;
 
-    // /**
-    //  * Skills Score (1-10) range.
-    //  */
-    // @Column(name = "DOC_SKILLS_C")
-    // private String skills;
+    /**
+     * Skills Score (1-10) range.
+     */
+    @Column(name = "DOC_SKILLS_C", length = 10)
+    private String skills;
 
-    // /**
-    //  * Program: MBA, MSCS, MSISM
-    //  */
-    // @Column(name = "DOC_PROGRAM_C", length = 100)
-    // private String program;
+    /**
+     * Program: MBA, MSCS, MSISM
+     */
+    @Column(name = "DOC_PROGRAM_C", length = 500)
+    private String program;
 
     
     /**
@@ -213,45 +213,45 @@ public class Document implements Loggable {
         this.gpa = gpa;
     }
 
-    // public String getAge() {
-    //     return age;
-    // }
+    public String getAge() {
+        return age;
+    }
 
-    // public void setAge(String age) {
-    //     this.age = age;
-    // }
+    public void setAge(String age) {
+        this.age = age;
+    }
 
-    // public String getGender() {
-    //     return gender;
-    // }
+    public String getGender() {
+        return gender;
+    }
 
-    // public void setGender(String gender) {
-    //     this.gender = gender;
-    // }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
     
-    // public String getExperience() {
-    //     return experience;
-    // }
+    public String getExperience() {
+        return experience;
+    }
 
-    // public void setExperience(String experience) {
-    //     this.experience = experience;
-    // }
+    public void setExperience(String experience) {
+        this.experience = experience;
+    }
 
-    // public String getSkills() {
-    //     return skills;
-    // }
+    public String getSkills() {
+        return skills;
+    }
 
-    // public void setSkills(String skills) {
-    //     this.skills = skills;
-    // }
+    public void setSkills(String skills) {
+        this.skills = skills;
+    }
 
-    // public String getProgram() {
-    //     return program;
-    // }
+    public String getProgram() {
+        return program;
+    }
 
-    // public void setProgram(String program) {
-    //     this.program = program;
-    // }
+    public void setProgram(String program) {
+        this.program = program;
+    }
     
     public String getSubject() {
         return subject;

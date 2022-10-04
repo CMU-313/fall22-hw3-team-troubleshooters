@@ -49,6 +49,11 @@ public class TestJpa extends BaseTransactionalTest {
         document.setTitle("This is a new document.");
         document.setDescription("This is the description");
         document.setGPA("4.0");
+        document.setAge("25");
+        document.setGender("female");
+        document.setExperience("5");
+        document.setSkills("8");
+        document.setProgram("Masters of Business Administration");
         document.setCreateDate(new Date());
         document.setLanguage("eng");
         String doc_id = documentDao.create(document, user_id);
@@ -60,5 +65,10 @@ public class TestJpa extends BaseTransactionalTest {
         Assert.assertNotNull(document);
         // asserts that document GPA works:
         Assert.assertEquals("4.0", document.getGPA());
+        Assert.assertEquals("25", document.getAge());
+        Assert.assertEquals("female", document.getGender());
+        Assert.assertEquals("5", document.getExperience());
+        Assert.assertEquals("8", document.getSkills());
+        Assert.assertEquals("Masters of Business Administration", document.getProgram());
     }
 }

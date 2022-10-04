@@ -111,6 +111,11 @@ public class DocumentDao {
         documentDto.setTitle((String) o[i++]);
         documentDto.setDescription((String) o[i++]);
         documentDto.setGPA((String) o[i++]);
+        documentDto.setAge((String) o[i++]);
+        documentDto.setGender((String) o[i++]);
+        documentDto.setExperience((String) o[i++]);
+        documentDto.setSkills((String) o[i++]);
+        documentDto.setProgram((String) o[i++]);
         documentDto.setSubject((String) o[i++]);
         documentDto.setIdentifier((String) o[i++]);
         documentDto.setPublisher((String) o[i++]);

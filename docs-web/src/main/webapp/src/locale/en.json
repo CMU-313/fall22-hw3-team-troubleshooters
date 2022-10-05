@@ -70,6 +70,7 @@
     "gpa": "GPA (0-4.0)",
     "gender": "Gender",
     "age": "Age",
+    "program": "Program",
     "contributors": "Contributors",
     "language": "Language",
     "creation_date": "Creation date",

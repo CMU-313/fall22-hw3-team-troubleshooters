@@ -1,0 +1,166 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Docs Parent                                                        [pom]
+[INFO] Docs Core                                                          [jar]
+[INFO] Docs Web Commons                                                   [jar]
+[INFO] Docs Web                                                           [war]
+[INFO] 
+[INFO] --------------------< com.sismics.docs:docs-parent >--------------------
+[INFO] Building Docs Parent 1.10                                          [1/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ docs-parent ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ docs-parent ---
+[INFO] argLine set to -javaagent:/Users/jasminenie/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/target/jacoco.exec
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ docs-parent ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ docs-parent ---
+[INFO] Installing /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/pom.xml to /Users/jasminenie/.m2/repository/com/sismics/docs/docs-parent/1.10/docs-parent-1.10.pom
+[INFO] 
+[INFO] ---------------------< com.sismics.docs:docs-core >---------------------
+[INFO] Building Docs Core 1.10                                            [2/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ docs-core ---
+[INFO] Deleting /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-core/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ docs-core ---
+[INFO] argLine set to -javaagent:/Users/jasminenie/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-core/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ docs-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 42 resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ docs-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 184 source files to /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-core/target/classes
+[WARNING] /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-core/src/main/java/com/sismics/docs/core/util/indexing/LuceneIndexingHandler.java: Some input files use or override a deprecated API.
+[WARNING] /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-core/src/main/java/com/sismics/docs/core/util/indexing/LuceneIndexingHandler.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ docs-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 19 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ docs-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-core/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ docs-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ docs-core ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ docs-core ---
+[INFO] Building jar: /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-core/target/docs-core-1.10.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ docs-core ---
+[INFO] Installing /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-core/target/docs-core-1.10.jar to /Users/jasminenie/.m2/repository/com/sismics/docs/docs-core/1.10/docs-core-1.10.jar
+[INFO] Installing /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-core/pom.xml to /Users/jasminenie/.m2/repository/com/sismics/docs/docs-core/1.10/docs-core-1.10.pom
+[INFO] 
+[INFO] ------------------< com.sismics.docs:docs-web-common >------------------
+[INFO] Building Docs Web Commons 1.10                                     [3/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ docs-web-common ---
+[INFO] Deleting /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web-common/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ docs-web-common ---
+[INFO] argLine set to -javaagent:/Users/jasminenie/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web-common/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ docs-web-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web-common/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ docs-web-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 14 source files to /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web-common/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ docs-web-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web-common/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ docs-web-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web-common/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ docs-web-common ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ docs-web-common ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ docs-web-common ---
+[INFO] Building jar: /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web-common/target/docs-web-common-1.10.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.0:test-jar (default) @ docs-web-common ---
+[INFO] Building jar: /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web-common/target/docs-web-common-1.10-tests.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ docs-web-common ---
+[INFO] Installing /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web-common/target/docs-web-common-1.10.jar to /Users/jasminenie/.m2/repository/com/sismics/docs/docs-web-common/1.10/docs-web-common-1.10.jar
+[INFO] Installing /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web-common/pom.xml to /Users/jasminenie/.m2/repository/com/sismics/docs/docs-web-common/1.10/docs-web-common-1.10.pom
+[INFO] Installing /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web-common/target/docs-web-common-1.10-tests.jar to /Users/jasminenie/.m2/repository/com/sismics/docs/docs-web-common/1.10/docs-web-common-1.10-tests.jar
+[INFO] 
+[INFO] ---------------------< com.sismics.docs:docs-web >----------------------
+[INFO] Building Docs Web 1.10                                             [4/4]
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ docs-web ---
+[INFO] Deleting /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ docs-web ---
+[INFO] argLine set to -javaagent:/Users/jasminenie/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ docs-web ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 5 resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ docs-web ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 19 source files to /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ docs-web ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 13 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ docs-web ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ docs-web ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ docs-web ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO] 
+[INFO] --- maven-war-plugin:3.3.1:war (default-war) @ docs-web ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [docs-web] in [/Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web/target/docs-web-1.10]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web/src/main/webapp]
+[INFO] Building war: /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web/target/docs-web-1.10.war
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ docs-web ---
+[INFO] Installing /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web/target/docs-web-1.10.war to /Users/jasminenie/.m2/repository/com/sismics/docs/docs-web/1.10/docs-web-1.10.war
+[INFO] Installing /Users/jasminenie/Desktop/17313/fall22-hw3-team-troubleshooters/docs-web/pom.xml to /Users/jasminenie/.m2/repository/com/sismics/docs/docs-web/1.10/docs-web-1.10.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Docs Parent 1.10:
+[INFO] 
+[INFO] Docs Parent ........................................ SUCCESS [  0.363 s]
+[INFO] Docs Core .......................................... SUCCESS [  6.069 s]
+[INFO] Docs Web Commons ................................... SUCCESS [  1.408 s]
+[INFO] Docs Web ........................................... SUCCESS [  5.900 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.836 s
+[INFO] Finished at: 2022-10-02T19:16:00-04:00
+[INFO] ------------------------------------------------------------------------

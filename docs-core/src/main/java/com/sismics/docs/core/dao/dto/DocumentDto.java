@@ -25,6 +25,37 @@ public class DocumentDto {
      * Description.
      */
     private String description;
+
+    /**
+     * gpa.
+     */
+    private double gpa;
+
+    /**
+     * age.
+     */
+    private int age;
+
+    /**
+     * Description.
+     */
+    private String gender;
+
+    /**
+     * experience.
+     */
+    private int experience;
+
+    /**
+     * skills.
+     */
+    private int skills;
+
+    /**
+     * Description.
+     */
+    private String program;
+
     
     /**
      * Subject.
@@ -142,6 +173,54 @@ public class DocumentDto {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public double getGPA() {
+        return gpa;
+    }
+
+    public void setGPA(double gpa) {
+        this.gpa = gpa;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    public int getSkills() {
+        return skills;
+    }
+
+    public void setSkills(int skills) {
+        this.skills = skills;
+    }
+
+    public String getProgram() {
+        return program;
+    }
+
+    public void setProgram(String program) {
+        this.program = program;
     }
 
     public String getSubject() {

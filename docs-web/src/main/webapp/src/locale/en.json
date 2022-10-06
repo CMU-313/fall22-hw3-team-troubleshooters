@@ -71,6 +71,8 @@
     "gender": "Gender",
     "age": "Age",
     "program": "Program",
+    "experience": "Experience (1-10)",
+    "skills": "Skills (1-10)",
     "contributors": "Contributors",
     "language": "Language",
     "creation_date": "Creation date",

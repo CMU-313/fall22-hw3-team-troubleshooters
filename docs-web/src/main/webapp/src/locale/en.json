@@ -74,6 +74,11 @@
     "avg_gpa": "Avg GPA", 
     "avg_skills": "Avg Skills",
     "avg_experience": "Avg Experience",
+    
+    "dummy_gpa": "4.0",
+    "dummy_experience": "5",
+    "dummy_skills": "7",
+    
     "subject": "Subject",
     "identifier": "Identifier",
     "publisher": "Publisher",

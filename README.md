@@ -40,6 +40,34 @@ Teedy is an open source, lightweight document management system for individuals 
 - [Bulk files importer](https://github.com/sismics/docs/tree/master/docs-importer) (single or scan mode)
 - Tested to one million documents
 
+# New Feature: Adding Document Fields for Admissions Properties
+
+The information below outlines the changes to several layers of Teedy to enable new fields in documents to record critical information about applicants. The information will be used to consider applicants. The added fields are:
+
+- Applicant GPA
+- Applicant Age
+- Applicant Gender (female/male/other)
+- Applicant Experience (Scored on a scale of 1-10)
+- Applicant Skills (Scored on a scale of 1-10)
+- Applied Program (MBA, MSCS, MSISM)
+
+The following descriptions and changes will be labeled with the contributer, e.g. (Jasmine)
+
+
+## Changes to Document Sidebar to incorporate statistics table on the front-end (Jasmine)
+
+**Documents changed:**
+1. `document.html`
+2. `en.json`
+
+**Testing:**
+Visual changes assessed by building Teedy and looking for physical changes to front-end.
+
+**Process**
+In this process, I built a table using HTML in `document.html` file, which is responsible for the document sidebar that shows the number of available documents in display. This file has access to all document objects and fields which will allow easy integration of statistical analysis over the entire entity.
+
+The team has decided to show `avg GPA`, `avg Skills`, and `avg Experience` as statistics. These numbers are displayed in the table by calling a function that is later defined as a string in  `en.json`. The calculation of statistics are done by Rahul in the middleware.
+
 
 # Native Installation
 

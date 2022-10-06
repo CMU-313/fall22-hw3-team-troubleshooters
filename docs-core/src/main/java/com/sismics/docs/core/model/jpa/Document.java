@@ -56,14 +56,14 @@ public class Document implements Loggable {
     /** 
     * GPA.
     */
-    @Column(name = "DOC_GPA_C", length = 36)
-    private String gpa;
+    @Column(name = "DOC_GPA_C")
+    private double gpa;
 
     /**
      * Description.
      */
-    @Column(name = "DOC_AGE_C", length = 36)
-    private String age;
+    @Column(name = "DOC_AGE_C")
+    private int age;
 
     /**
      * Gender.
@@ -74,14 +74,14 @@ public class Document implements Loggable {
     /**
      * Experience Score (1-10) range.
      */
-    @Column(name = "DOC_EXPERIENCE_C", length = 36)
-    private String experience;
+    @Column(name = "DOC_EXPERIENCE_C")
+    private int experience;
 
     /**
      * Skills Score (1-10) range.
      */
-    @Column(name = "DOC_SKILLS_C", length = 36)
-    private String skills;
+    @Column(name = "DOC_SKILLS_C")
+    private int skills;
 
     /**
      * Program: MBA, MSCS, MSISM
@@ -205,19 +205,19 @@ public class Document implements Loggable {
         this.description = description;
     }
 
-    public String getGPA() {
+    public double getGPA() {
         return gpa;
     }
 
-    public void setGPA(String gpa) {
+    public void setGPA(double gpa) {
         this.gpa = gpa;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -229,19 +229,19 @@ public class Document implements Loggable {
         this.gender = gender;
     }
     
-    public String getExperience() {
+    public int getExperience() {
         return experience;
     }
 
-    public void setExperience(String experience) {
+    public void setExperience(int experience) {
         this.experience = experience;
     }
 
-    public String getSkills() {
+    public int getSkills() {
         return skills;
     }
 
-    public void setSkills(String skills) {
+    public void setSkills(int skills) {
         this.skills = skills;
     }
 

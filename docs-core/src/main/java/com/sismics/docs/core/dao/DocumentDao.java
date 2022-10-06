@@ -110,11 +110,11 @@ public class DocumentDao {
         documentDto.setId((String) o[i++]);
         documentDto.setTitle((String) o[i++]);
         documentDto.setDescription((String) o[i++]);
-        documentDto.setGPA((String) o[i++]);
-        documentDto.setAge((String) o[i++]);
+        documentDto.setGPA((double) o[i++]);
+        documentDto.setAge((int) o[i++]);
         documentDto.setGender((String) o[i++]);
-        documentDto.setExperience((String) o[i++]);
-        documentDto.setSkills((String) o[i++]);
+        documentDto.setExperience((int) o[i++]);
+        documentDto.setSkills((int) o[i++]);
         documentDto.setProgram((String) o[i++]);
         documentDto.setSubject((String) o[i++]);
         documentDto.setIdentifier((String) o[i++]);

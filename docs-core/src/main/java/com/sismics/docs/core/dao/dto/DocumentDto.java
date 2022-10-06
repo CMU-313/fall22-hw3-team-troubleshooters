@@ -29,12 +29,12 @@ public class DocumentDto {
     /**
      * gpa.
      */
-    private String gpa;
+    private double gpa;
 
     /**
      * age.
      */
-    private String age;
+    private int age;
 
     /**
      * Description.
@@ -44,12 +44,12 @@ public class DocumentDto {
     /**
      * experience.
      */
-    private String experience;
+    private int experience;
 
     /**
      * skills.
      */
-    private String skills;
+    private int skills;
 
     /**
      * Description.
@@ -175,19 +175,19 @@ public class DocumentDto {
         this.description = description;
     }
 
-    public String getGPA() {
+    public double getGPA() {
         return gpa;
     }
 
-    public void setGPA(String gpa) {
+    public void setGPA(double gpa) {
         this.gpa = gpa;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -199,19 +199,19 @@ public class DocumentDto {
         this.gender = gender;
     }
     
-    public String getExperience() {
+    public int getExperience() {
         return experience;
     }
 
-    public void setExperience(String experience) {
+    public void setExperience(int experience) {
         this.experience = experience;
     }
 
-    public String getSkills() {
+    public int getSkills() {
         return skills;
     }
 
-    public void setSkills(String skills) {
+    public void setSkills(int skills) {
         this.skills = skills;
     }
 

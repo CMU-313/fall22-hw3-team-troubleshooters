@@ -26,18 +26,18 @@ The following descriptions and changes will be labeled with the contributer, e.g
 ## Changes to Document Upload UI (Hikma)
 
 **Documents changed:**
-1. 'document.edit.html'
-2. 'en.json'
+1. `document.edit.html`
+2. `en.json`
 
 **Testing Procedure:** 
 Changes were deployed on a local server and manually examined to verify successful changes.
 
 This is the frontend side to the work done to include the additional information for each applicant.
 
-In 'document.edit.html', the new fields allow applicant to enter GPA and age (numerical values) as well as 
+In `document.edit.html`, the new fields allow applicant to enter GPA and age (numerical values) as well as 
 gender, and applied program (categorical values). 
 
-In 'en.json', there are new entries for the labels that correspond to the additional fields added. 
+In `en.json`, there are new entries for the labels that correspond to the additional fields added. 
 
 # Features
 

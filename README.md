@@ -10,6 +10,35 @@ Teedy is an open source, lightweight document management system for individuals 
 
 ![New!](https://teedy.io/img/laptop-demo.png?20180301)
 
+# New Feature: Adding Document Fields for Admissions Properties
+
+The information below outlines the changes to several layers of Teedy to enable new fields in documents to record critical information about applicants. The information will be used to consider applicants. The added fields are:
+
+- Applicant GPA
+- Applicant Age
+- Applicant Gender (female/male/other)
+- Applicant Experience (Scored on a scale of 1-10)
+- Applicant Skills (Scored on a scale of 1-10)
+- Applied Program (MBA, MSCS, MSISM)
+
+The following descriptions and changes will be labeled with the contributer, e.g. (Jasmine)
+
+## Changes to Document Upload UI (Hikma)
+
+**Documents changed:**
+1. `document.edit.html`
+2. `en.json`
+
+**Testing Procedure:** 
+Changes were deployed on a local server and manually examined to verify successful changes.
+
+This is the frontend side to the work done to include the additional information for each applicant.
+
+In `document.edit.html`, the new fields allow applicant to enter GPA and age (numerical values) as well as 
+gender, and applied program (categorical values). 
+
+In `en.json`, there are new entries for the labels that correspond to the additional fields added. 
+
 # Features
 
 - Responsive user interface

@@ -110,6 +110,12 @@ public class DocumentDao {
         documentDto.setId((String) o[i++]);
         documentDto.setTitle((String) o[i++]);
         documentDto.setDescription((String) o[i++]);
+        documentDto.setGPA((double) o[i++]);
+        documentDto.setAge((int) o[i++]);
+        documentDto.setGender((String) o[i++]);
+        documentDto.setExperience((int) o[i++]);
+        documentDto.setSkills((int) o[i++]);
+        documentDto.setProgram((String) o[i++]);
         documentDto.setSubject((String) o[i++]);
         documentDto.setIdentifier((String) o[i++]);
         documentDto.setPublisher((String) o[i++]);
@@ -205,6 +211,12 @@ public class DocumentDao {
         // Update the document
         documentDb.setTitle(document.getTitle());
         documentDb.setDescription(document.getDescription());
+        documentDb.setGPA(document.getGPA());
+        documentDb.setAge(document.getAge());
+        documentDb.setGender(document.getGender());
+        documentDb.setExperience(document.getExperience());
+        documentDb.setSkills(document.getExperience());
+        documentDb.setProgram(document.getProgram());
         documentDb.setSubject(document.getSubject());
         documentDb.setIdentifier(document.getIdentifier());
         documentDb.setPublisher(document.getPublisher());

@@ -81,51 +81,6 @@ In `DocumentDao.java`, the edits were to update and add functions, so that the f
 to the back end database, whether on creation or on update. We also changed some of the getDocument function so that 
 there was no longer a null error when trying to examine the new document data from a document.
 
-
-# Features
-
-- Responsive user interface
-- Optical character recognition
-- LDAP authentication ![New!](https://www.sismics.com/public/img/new.png)
-- Support image, PDF, ODT, DOCX, PPTX files
-- Video file support
-- Flexible search engine with suggestions and highlighting
-- Full text search in all supported files
-- All [Dublin Core](http://dublincore.org/) metadata
-- Custom user-defined metadata ![New!](https://www.sismics.com/public/img/new.png)
-- Workflow system ![New!](https://www.sismics.com/public/img/new.png)
-- 256-bit AES encryption of stored files
-- File versioning ![New!](https://www.sismics.com/public/img/new.png)
-- Tag system with nesting
-- Import document from email (EML format)
-- Automatic inbox scanning and importing
-- User/group permission system
-- 2-factor authentication
-- Hierarchical groups
-- Audit log
-- Comments
-- Storage quota per user
-- Document sharing by URL
-- RESTful Web API
-- Webhooks to trigger external service
-- Fully featured Android client
-- [Bulk files importer](https://github.com/sismics/docs/tree/master/docs-importer) (single or scan mode)
-- Tested to one million documents
-
-# New Feature: Adding Document Fields for Admissions Properties
-
-The information below outlines the changes to several layers of Teedy to enable new fields in documents to record critical information about applicants. The information will be used to consider applicants. The added fields are:
-
-- Applicant GPA
-- Applicant Age
-- Applicant Gender (female/male/other)
-- Applicant Experience (Scored on a scale of 1-10)
-- Applicant Skills (Scored on a scale of 1-10)
-- Applied Program (MBA, MSCS, MSISM)
-
-The following descriptions and changes will be labeled with the contributer, e.g. (Jasmine)
-
-
 ## Changes to Document Sidebar to incorporate statistics table on the front-end (Jasmine)
 
 **Documents changed:**

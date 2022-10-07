@@ -275,13 +275,51 @@
       <table class="row table table-hover table-documents">
         <thead>
           <tr>
-            <th class="col-xs-6">{{ 'document.avg_skills' | translate}} </th>
-            <th class="col-xs-6" >{{ 'document.avg_experience' | translate}} </th>
-            <th class="col-xs-6" >{{ 'document.avg_gpa' | translate}} </th>
+            <th class="col-xs-6" >{{ 'document.avg_gpa' | translate }} </th>
+            <th class="col-xs-6" >{{ 'document.avg_experience' | translate }} </th>
+            <th class="col-xs-6" >{{ 'document.avg_skills' | translate }} </th>
           </tr>
         </thead>
+
+        <tbody>
+        <tr ng-if="!documents">
+          <td colspan="3" class="text-center">
+            <span class="fas fa-circle-notch fa-spin"></span>
+          </td>
+        </tr>
+
+        <tr ng-if="totalDocuments == 0">
+          <td colspan="3" class="text-center">
+            <span ng-if="search.length == 0">{{ 'document.no_statistics' | translate }}</span>
+          </td>
+        </tr>
+
+        <!-- adding the statistics here below -->
+        <tr ng-if="totalDocuments!= 0">
+          <td>
+            {{'document.dummy_gpa' | translate}}
+          </td>
+          <td>
+            {{'document.dummy_experience' | translate}}
+          </td>
+          <td>
+            {{'document.dummy_skills' | translate}}
+          </td>
+        </tr>
+      </tbody>
+
       </table>
 
+      <!-- Document grid -->
+      <div class="row table-documents" ng-show="displayMode == 'grid'">
+        <div ng-if="!documents" class="col-md-12 text-center">
+          <span class="fas fa-circle-notch fa-spin"></span>
+        </div>
+
+        <div ng-if="totalDocuments == 0" class=" col-md-12 text-center">
+          <span ng-if="search.length == 0">{{ 'document.no_documents' | translate }}</span>
+          <span ng-if="search.length > 0" translate="document.search_empty" translate-values="{ search: search }"></span>
+        </div>
 
       <div class="text-center pagination-box">
         <ul uib-pagination

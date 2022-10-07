@@ -61,6 +61,7 @@
     "tags": "Tags",
     "no_tags": "No tags",
     "no_documents": "No document in the database",
+    "no_statistics": "No statistics available, please upload documents",
     "search": "Search",
     "search_empty": "No matches for <strong>\"{{ search }}\"</strong>",
     "shared": "Shared",
@@ -76,9 +77,15 @@
     "contributors": "Contributors",
     "language": "Language",
     "creation_date": "Creation date",
+
+    "avg_gpa": "Avg GPA", 
     "avg_skills": "Avg Skills",
     "avg_experience": "Avg Experience",
-    "avg_gpa": "Avg GPA",
+    
+    "dummy_gpa": "4.0",
+    "dummy_experience": "5",
+    "dummy_skills": "7",
+    
     "subject": "Subject",
     "identifier": "Identifier",
     "publisher": "Publisher",

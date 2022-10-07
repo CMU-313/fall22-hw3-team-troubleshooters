@@ -40,6 +40,10 @@ angular.module('docs').controller('Document', function ($scope, $rootScope, $tim
           $scope.documents = data.documents;
           $scope.totalDocuments = data.total;
           $scope.suggestions = data.suggestions;
+
+          $scope.avgGPA = data.gpa;
+          $scope.avgSkills = data.experience;
+          $scope.avgExp = data.skills;
         });
   };
   

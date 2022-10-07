@@ -41,9 +41,9 @@ angular.module('docs').controller('Document', function ($scope, $rootScope, $tim
           $scope.totalDocuments = data.total;
           $scope.suggestions = data.suggestions;
 
-          $scope.avgGPA = 4;//data.total;
-          $scope.avgSkills = 8;//data.total;
-          $scope.avgExp = 6;//data.total;
+          // $scope.avgGPA = 4;//data.total;
+          // $scope.avgSkills = 8;//data.total;
+          // $scope.avgExp = 6;//data.total;
         });
   };
   

@@ -715,6 +715,12 @@ public class DocumentResource extends BaseResource {
      * @param metadataValueList Metadata value list
      * @param language Language
      * @param createDateStr Creation date
+     * @param prog program
+     * @param exp experience
+     * @param skills Skills
+     * @param gpaVal GPA
+     * @param gend gender
+     * @param ageYears Age
      * @return Response
      */
     @PUT
@@ -741,14 +747,6 @@ public class DocumentResource extends BaseResource {
             @FormParam("gpa") int gpaVal,
             @FormParam("gender") String gend,
             @FormParam("age") int ageYears) {
-
-        System.out.println("Calling add");
-        System.out.println(prog);
-        System.out.println(exp);
-        System.out.println(skills);
-        System.out.println(gpaVal);
-        System.out.println(gend);
-        System.out.println(ageYears);
 
         if (!authenticate()) {
             throw new ForbiddenClientException();
@@ -848,6 +846,12 @@ public class DocumentResource extends BaseResource {
      * @apiParam {String[]} [metadata_value] List of metadata values
      * @apiParam {String} language Language
      * @apiParam {Number} [create_date] Create date (timestamp)
+     * @apiParam {String} program
+     * @apiParam {Number} int exp
+     * @apiParam {Number} int skills
+     * @apiParam {Number} int gpaVal
+     * @apiParam {String} gender
+     * @apiParam {Number} int ageYears
      * @apiSuccess {String} id Document ID
      * @apiError (client) ForbiddenError Access denied or document not writable
      * @apiError (client) ValidationError Validation error
@@ -885,14 +889,6 @@ public class DocumentResource extends BaseResource {
             @FormParam("gpa") int gpaVal,
             @FormParam("gender") String gend,
             @FormParam("age") int ageYears) {
-        
-        System.out.println("Calling update");
-        System.out.println(prog);
-        System.out.println(exp);
-        System.out.println(skills);
-        System.out.println(gpaVal);
-        System.out.println(gend);
-        System.out.println(ageYears);
 
         if (!authenticate()) {
             throw new ForbiddenClientException();

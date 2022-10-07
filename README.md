@@ -62,6 +62,25 @@ gender, and applied program (categorical values).
 
 In `en.json`, there are new entries for the labels that correspond to the additional fields added. 
 
+## Changes to Document Upload REST both forward and backward (Charly and Rahul)
+
+**Documents changed:**
+1. `DocumentResouce.java`
+2. `DocumentDao.java`
+
+**Testing Procedure:** 
+Changes were deployed on a local server and examination of json replies and requests manually to verify success.
+
+This is the middleware side to the work, so it depends on an agreed frontend and backend interface. I handled some 
+calculations and sent information between the two ends.
+
+In `DocumentResouce.java`, the edits were to update and add functions, so that the front end form inputs can be sent
+to the back end database, whether on creation or on update. We also changed some functions to calculate the average sum statistics for a few variables. We used an iterative loop and looped all documents.
+
+In `DocumentDao.java`, the edits were to update and add functions, so that the front end form inputs can be sent
+to the back end database, whether on creation or on update. We also changed some of the getDocument function so that 
+there was no longer a null error when trying to examine the new document data from a document.
+
 
 # Features
 

@@ -1150,3 +1150,45 @@ public class DocumentResource extends BaseResource {
         }
     }
 }
+
+
+// private void updateCounts() {
+
+//     long total = UserDao.getActiveUserCount();//aclItemList.size();
+//     //Find average age
+
+//     /*Query q = em.createNativeQuery("SELCT sum(*) FROM ___ ");
+//     long ageSum = ((Number) q.getSingleResult()).longValue();
+//     long ageAvg = ageSum/total;*/
+//     //average gpa
+//     q = em.createNativeQuery("SELCT sum(*) FROM ___ ");
+//     long gpaSum = ((Number) q.getSingleResult()).longValue();
+//     long gpaavg = gpaSum/total;
+//     //average score of skills
+//     q = em.createNativeQuery("SELCT sum(*) FROM ___ ");
+//     long scoreSum = ((Number) q.getSingleResult()).longValue();
+//     long scoreavg = scoreSum/total;
+//     //average experience score
+//     q = em.createNativeQuery("SELCT sum(*) FROM ___ ");
+//     long expSum = ((Number) q.getSingleResult()).longValue();
+//     long expavg = expSum/total;
+//     /*//number of males
+//     //number of females
+//     //number of other
+//     q = em.createNativeQuery("SELCT sum(*) FROM ___ WHERE ___ is ");
+//     long males = ((Number) q.getSingleResult()).longValue();
+//     q = em.createNativeQuery("SELCT sum(*) FROM ___ WHERE ___ is ");
+//     long females = ((Number) q.getSingleResult()).longValue();
+//     q = em.createNativeQuery("SELCT sum(*) FROM ___ WHERE ___ is ");
+//     long other = ((Number) q.getSingleResult()).longValue();
+//     //number of mba
+//     //number of mscs
+//     //number of msism
+//     q = em.createNativeQuery("SELCT sum(*) FROM ___ WHERE ___ is ");
+//     long mba = ((Number) q.getSingleResult()).longValue();
+//     q = em.createNativeQuery("SELCT sum(*) FROM ___ WHERE ___ is ");
+//     long mscs = ((Number) q.getSingleResult()).longValue();
+//     q = em.createNativeQuery("SELCT sum(*) FROM ___ WHERE ___ is ");
+//     long msism = ((Number) q.getSingleResult()).longValue();*/
+
+// }

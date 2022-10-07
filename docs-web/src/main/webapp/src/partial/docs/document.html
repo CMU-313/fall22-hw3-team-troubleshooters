@@ -296,14 +296,14 @@
 
         <!-- adding the statistics here below -->
         <tr ng-if="totalDocuments!= 0">
-          <td>
-            {{'document.dummy_gpa' | translate}}
+          <td ng-model="avgGPA" >
+            {{avgGPA}}
           </td>
-          <td>
-            {{'document.dummy_experience' | translate}}
+          <td ng-model="avgExp" >
+            {{avgExp}}
           </td>
-          <td>
-            {{'document.dummy_skills' | translate}}
+          <td ng-model="avgSkills">
+            {{avgSkills}}
           </td>
         </tr>
       </tbody>

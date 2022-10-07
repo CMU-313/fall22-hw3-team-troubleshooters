@@ -484,11 +484,21 @@ public class DocumentResource extends BaseResource {
             suggestions.add(suggestion);
         }
 
+        //System.out.println("Calling getStats");
+        //dummy variables passed from system
+        double gpaAvg = 3.5;
+        int expAvg = 6;
+        int skillsAvg = 4;                
+
         response.add("total", paginatedList.getResultCount())
                 .add("documents", documents)
-                .add("suggestions", suggestions);
+                .add("suggestions", suggestions)
+                .add("gpa", gpaAvg)
+                .add("experience", expAvg)
+                .add("skills", skillsAvg);
         
         return Response.ok().entity(response.build()).build();
+
     }
     
     /**

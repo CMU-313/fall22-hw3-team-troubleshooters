@@ -715,6 +715,12 @@ public class DocumentResource extends BaseResource {
      * @param metadataValueList Metadata value list
      * @param language Language
      * @param createDateStr Creation date
+     * @param prog program
+     * @param exp experience
+     * @param skills Skills
+     * @param gpaVal GPA
+     * @param gend gender
+     * @param ageYears Age
      * @return Response
      */
     @PUT
@@ -734,7 +740,14 @@ public class DocumentResource extends BaseResource {
             @FormParam("metadata_id") List<String> metadataIdList,
             @FormParam("metadata_value") List<String> metadataValueList,
             @FormParam("language") String language,
-            @FormParam("create_date") String createDateStr) {
+            @FormParam("create_date") String createDateStr,
+            @FormParam("program") String prog,
+            @FormParam("experience") int exp,
+            @FormParam("skills") int skills,
+            @FormParam("gpa") int gpaVal,
+            @FormParam("gender") String gend,
+            @FormParam("age") int ageYears) {
+
         if (!authenticate()) {
             throw new ForbiddenClientException();
         }
@@ -770,6 +783,13 @@ public class DocumentResource extends BaseResource {
         document.setCoverage(coverage);
         document.setRights(rights);
         document.setLanguage(language);
+        document.setProgram(prog);
+        document.setExperience(exp);
+        document.setSkills(skills);
+        document.setGPA(gpaVal);
+        document.setGender(gend);
+        document.setAge(ageYears);
+
         if (createDate == null) {
             document.setCreateDate(new Date());
         } else {
@@ -803,7 +823,7 @@ public class DocumentResource extends BaseResource {
         return Response.ok().entity(response.build()).build();
     }
     
-    /**
+        /**
      * Updates the document.
      *
      * @api {post} /document/:id Update a document
@@ -826,6 +846,12 @@ public class DocumentResource extends BaseResource {
      * @apiParam {String[]} [metadata_value] List of metadata values
      * @apiParam {String} language Language
      * @apiParam {Number} [create_date] Create date (timestamp)
+     * @apiParam {String} program
+     * @apiParam {Number} int exp
+     * @apiParam {Number} int skills
+     * @apiParam {Number} int gpaVal
+     * @apiParam {String} gender
+     * @apiParam {Number} int ageYears
      * @apiSuccess {String} id Document ID
      * @apiError (client) ForbiddenError Access denied or document not writable
      * @apiError (client) ValidationError Validation error
@@ -856,7 +882,14 @@ public class DocumentResource extends BaseResource {
             @FormParam("metadata_id") List<String> metadataIdList,
             @FormParam("metadata_value") List<String> metadataValueList,
             @FormParam("language") String language,
-            @FormParam("create_date") String createDateStr) {
+            @FormParam("create_date") String createDateStr,
+            @FormParam("program") String prog,
+            @FormParam("experience") int exp,
+            @FormParam("skills") int skills,
+            @FormParam("gpa") int gpaVal,
+            @FormParam("gender") String gend,
+            @FormParam("age") int ageYears) {
+
         if (!authenticate()) {
             throw new ForbiddenClientException();
         }
@@ -874,6 +907,9 @@ public class DocumentResource extends BaseResource {
         coverage = ValidationUtil.validateLength(coverage, "coverage", 0, 100, true);
         rights = ValidationUtil.validateLength(rights, "rights", 0, 100, true);
         Date createDate = ValidationUtil.validateDate(createDateStr, "create_date", true);
+
+        //may need some verification for my values??
+
         if (language != null && !Constants.SUPPORTED_LANGUAGES.contains(language)) {
             throw new ClientException("ValidationError", MessageFormat.format("{0} is not a supported language", language));
         }
@@ -903,6 +939,12 @@ public class DocumentResource extends BaseResource {
         document.setCoverage(coverage);
         document.setRights(rights);
         document.setLanguage(language);
+        document.setProgram(prog);
+        document.setExperience(exp);
+        document.setSkills(skills);
+        document.setGPA(gpaVal);
+        document.setGender(gend);
+        document.setAge(ageYears);
         if (createDate == null) {
             document.setCreateDate(new Date());
         } else {

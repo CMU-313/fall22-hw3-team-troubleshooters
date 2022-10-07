@@ -173,7 +173,13 @@ public class DocumentResource extends BaseResource {
                 .add("update_date", documentDto.getUpdateTimestamp())
                 .add("language", documentDto.getLanguage())
                 .add("shared", documentDto.getShared())
-                .add("file_count", documentDto.getFileCount());
+                .add("file_count", documentDto.getFileCount())
+                .add("program",documentDto.getProgram())
+                .add("experience",documentDto.getExperience())
+                .add("skills",documentDto.getSkills())
+                .add("gpa",documentDto.getGPA())
+                .add("gender",documentDto.getGender())
+                .add("age",documentDto.getAge());
 
         List<TagDto> tagDtoList = null;
         if (principal.isAnonymous()) {
@@ -417,6 +423,11 @@ public class DocumentResource extends BaseResource {
             throw new ForbiddenClientException();
         }
         
+        int count = 0;
+        double gpaSum = 0.0;
+        int expSum = 0;
+        int skillsSum = 0;
+
         JsonObjectBuilder response = Json.createObjectBuilder();
         JsonArrayBuilder documents = Json.createArrayBuilder();
         
@@ -453,6 +464,9 @@ public class DocumentResource extends BaseResource {
                         .add("color", tagDto.getColor()));
             }
 
+            DocumentDao dao = new DocumentDao();
+            DocumentDto dto = dao.getDocument(documentDto.getId(), PermType.READ, getTargetIdList(null));
+
             JsonObjectBuilder documentObjectBuilder = Json.createObjectBuilder()
                     .add("id", documentDto.getId())
                     .add("highlight", JsonUtil.nullable(documentDto.getHighlight()))
@@ -466,7 +480,19 @@ public class DocumentResource extends BaseResource {
                     .add("active_route", documentDto.isActiveRoute())
                     .add("current_step_name", JsonUtil.nullable(documentDto.getCurrentStepName()))
                     .add("file_count", documentDto.getFileCount())
-                    .add("tags", tags);
+                    .add("tags", tags)
+                    .add("program",dto.getProgram())
+                    .add("experience",dto.getExperience())
+                    .add("skills",dto.getSkills())
+                    .add("gpa",dto.getGPA())
+                    .add("gender",dto.getGender())
+                    .add("age",dto.getAge());
+
+            count += 1;
+            gpaSum += dto.getGPA();
+            expSum += dto.getExperience();
+            skillsSum += dto.getSkills();
+
             if (Boolean.TRUE == files) {
                 JsonArrayBuilder filesArrayBuilder = Json.createArrayBuilder();
                 // Find files matching the document
@@ -484,12 +510,17 @@ public class DocumentResource extends BaseResource {
             suggestions.add(suggestion);
         }
 
-        //System.out.println("Calling getStats");
         //dummy variables passed from system
         double gpaAvg = 3.5;
         int expAvg = 6;
-        int skillsAvg = 4;                
+        int skillsAvg = 4;  
+        if(count > 0){
+            gpaAvg = gpaSum/count;
+            expAvg = expSum/count;
+            skillsAvg = skillsSum/count;
+        }
 
+        //Passing statistics with return all documents json
         response.add("total", paginatedList.getResultCount())
                 .add("documents", documents)
                 .add("suggestions", suggestions)
@@ -498,7 +529,6 @@ public class DocumentResource extends BaseResource {
                 .add("skills", skillsAvg);
         
         return Response.ok().entity(response.build()).build();
-
     }
     
     /**
@@ -1202,45 +1232,3 @@ public class DocumentResource extends BaseResource {
         }
     }
 }
-
-
-// private void updateCounts() {
-
-//     long total = UserDao.getActiveUserCount();//aclItemList.size();
-//     //Find average age
-
-//     /*Query q = em.createNativeQuery("SELCT sum(*) FROM ___ ");
-//     long ageSum = ((Number) q.getSingleResult()).longValue();
-//     long ageAvg = ageSum/total;*/
-//     //average gpa
-//     q = em.createNativeQuery("SELCT sum(*) FROM ___ ");
-//     long gpaSum = ((Number) q.getSingleResult()).longValue();
-//     long gpaavg = gpaSum/total;
-//     //average score of skills
-//     q = em.createNativeQuery("SELCT sum(*) FROM ___ ");
-//     long scoreSum = ((Number) q.getSingleResult()).longValue();
-//     long scoreavg = scoreSum/total;
-//     //average experience score
-//     q = em.createNativeQuery("SELCT sum(*) FROM ___ ");
-//     long expSum = ((Number) q.getSingleResult()).longValue();
-//     long expavg = expSum/total;
-//     /*//number of males
-//     //number of females
-//     //number of other
-//     q = em.createNativeQuery("SELCT sum(*) FROM ___ WHERE ___ is ");
-//     long males = ((Number) q.getSingleResult()).longValue();
-//     q = em.createNativeQuery("SELCT sum(*) FROM ___ WHERE ___ is ");
-//     long females = ((Number) q.getSingleResult()).longValue();
-//     q = em.createNativeQuery("SELCT sum(*) FROM ___ WHERE ___ is ");
-//     long other = ((Number) q.getSingleResult()).longValue();
-//     //number of mba
-//     //number of mscs
-//     //number of msism
-//     q = em.createNativeQuery("SELCT sum(*) FROM ___ WHERE ___ is ");
-//     long mba = ((Number) q.getSingleResult()).longValue();
-//     q = em.createNativeQuery("SELCT sum(*) FROM ___ WHERE ___ is ");
-//     long mscs = ((Number) q.getSingleResult()).longValue();
-//     q = em.createNativeQuery("SELCT sum(*) FROM ___ WHERE ___ is ");
-//     long msism = ((Number) q.getSingleResult()).longValue();*/
-
-// }

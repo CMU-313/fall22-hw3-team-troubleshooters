@@ -496,6 +496,9 @@ public class DocumentResource extends BaseResource {
                 .add("gpa", gpaAvg)
                 .add("experience", expAvg)
                 .add("skills", skillsAvg);
+        
+        return Response.ok().entity(response.build()).build();
+
     }
     
     /**

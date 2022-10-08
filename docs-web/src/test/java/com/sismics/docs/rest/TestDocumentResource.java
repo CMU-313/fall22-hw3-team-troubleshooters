@@ -29,6 +29,8 @@ import java.util.Date;
 public class TestDocumentResource extends BaseJerseyTest {
     /**
      * Test the document resource.
+     * and for the added document inputs:
+     * gpa,program, skills, experience, age, gender
      * 
      * @throws Exception e
      */
@@ -59,6 +61,17 @@ public class TestDocumentResource extends BaseJerseyTest {
                         .param("color", "#0000ff")), JsonObject.class);
         String tag2Id = json.getString("id");
         Assert.assertNotNull(tag2Id);
+
+        // List all documents
+        json = target().path("/document/list")
+                .queryParam("sort_column", 3)
+                .queryParam("asc", true)
+                .request()
+                .cookie(TokenBasedSecurityFilter.COOKIE_NAME, document1Token)
+                .get(JsonObject.class);
+        Assert.assertEquals(true , 3.5 == json.getJsonNumber("gpa").doubleValue());
+        Assert.assertEquals(6, json.getInt("experience"));
+        Assert.assertEquals(4 , json.getInt("skills"));
 
         // Create a document with document1
         long create1Date = new Date().getTime();
@@ -418,6 +431,115 @@ public class TestDocumentResource extends BaseJerseyTest {
                 .cookie(TokenBasedSecurityFilter.COOKIE_NAME, document1Token)
                 .get();
         Assert.assertEquals(Status.NOT_FOUND, Status.fromStatusCode(response.getStatus()));
+
+
+        // Login document5
+        clientUtil.createUser("document5");
+        String document5Token = clientUtil.login("document5");        
+        
+        // Create a document 5
+        long create5Date = new Date().getTime();
+        json = target().path("/document").request()
+                .cookie(TokenBasedSecurityFilter.COOKIE_NAME, document5Token)
+                .put(Entity.form(new Form()
+                        .param("title", "My super title document 5")
+                        .param("language", "eng")
+                        .param("create_date", Long.toString(create5Date))
+                        .param("program","MSISM")
+                        .param("experience","8")
+                        .param("skills","10")
+                        .param("gpa","3")
+                        .param("gender","male")
+                        .param("age","32")), JsonObject.class);
+        String document5Id = json.getString("id");
+        Assert.assertNotNull(document5Id);
+        
+        // Get document 5
+        json = target().path("/document/" + document5Id).request()
+                .cookie(TokenBasedSecurityFilter.COOKIE_NAME, document5Token)
+                .get(JsonObject.class);
+        Assert.assertEquals("MSISM", json.getString("program"));
+        Assert.assertEquals(8, json.getInt("experience"));
+        Assert.assertEquals(10, json.getInt("skills"));
+        Assert.assertEquals(3, json.getInt("gpa"));
+        Assert.assertEquals("male", json.getString("gender"));
+        Assert.assertEquals(32, json.getInt("age"));
+
+        // Create a document 2
+        long create6Date = new Date().getTime();
+        json = target().path("/document").request()
+                .cookie(TokenBasedSecurityFilter.COOKIE_NAME, document5Token)
+                .put(Entity.form(new Form()
+                        .param("title", "My super title document 6")
+                        .param("language", "eng")
+                        .param("create_date", Long.toString(create6Date))
+                        .param("program","MBA")
+                        .param("experience","8")
+                        .param("skills","2")
+                        .param("gpa","2")
+                        .param("gender","female")
+                        .param("age","21")), JsonObject.class);
+        String document6Id = json.getString("id");
+        Assert.assertNotNull(document6Id);
+
+        // Get document 2
+        json = target().path("/document/" + document6Id).request()
+                .cookie(TokenBasedSecurityFilter.COOKIE_NAME, document5Token)
+                .get(JsonObject.class);
+        Assert.assertEquals("MBA", json.getString("program"));
+        Assert.assertEquals(8, json.getInt("experience"));
+        Assert.assertEquals(2, json.getInt("skills"));
+        Assert.assertEquals(2, json.getInt("gpa"));
+        Assert.assertEquals("female", json.getString("gender"));
+        Assert.assertEquals(21, json.getInt("age"));
+
+        // List all documents
+        json = target().path("/document/list")
+                .queryParam("sort_column", 3)
+                .queryParam("asc", true)
+                .request()
+                .cookie(TokenBasedSecurityFilter.COOKIE_NAME, document5Token)
+                .get(JsonObject.class);
+        Assert.assertEquals(8, json.getInt("experience"));
+        Assert.assertEquals(true , 2.5 == json.getJsonNumber("gpa").doubleValue());
+        Assert.assertEquals(6, json.getInt("skills"));
+        
+        // Update document 5
+        json = target().path("/document/" + document5Id).request()
+                .cookie(TokenBasedSecurityFilter.COOKIE_NAME, document5Token)
+                .post(Entity.form(new Form()
+                        .param("title", "My new super document 1")
+                        .param("language", "eng")
+                        .param("create_date", Long.toString(create5Date))
+                        .param("program","MSCS")
+                        .param("experience","4")
+                        .param("skills","6")
+                        .param("gpa","1")
+                        .param("gender","female")
+                        .param("age","30")), JsonObject.class);
+        Assert.assertEquals(document5Id, json.getString("id"));
+
+        // Get document 5
+        json = target().path("/document/" + document5Id).request()
+                .cookie(TokenBasedSecurityFilter.COOKIE_NAME, document5Token)
+                .get(JsonObject.class);
+        Assert.assertEquals("MSCS", json.getString("program"));
+        Assert.assertEquals(4, json.getInt("experience"));
+        Assert.assertEquals(6, json.getInt("skills"));
+        Assert.assertEquals(1, json.getInt("gpa"));
+        Assert.assertEquals("female", json.getString("gender"));
+        Assert.assertEquals(30, json.getInt("age"));
+
+        // List all documents
+        json = target().path("/document/list")
+                .queryParam("sort_column", 3)
+                .queryParam("asc", true)
+                .request()
+                .cookie(TokenBasedSecurityFilter.COOKIE_NAME, document5Token)
+                .get(JsonObject.class);
+        Assert.assertEquals(true , 1.5 == json.getJsonNumber("gpa").doubleValue());
+        Assert.assertEquals(6, json.getInt("experience"));
+        Assert.assertEquals(4, json.getInt("skills"));
     }
     
     /**

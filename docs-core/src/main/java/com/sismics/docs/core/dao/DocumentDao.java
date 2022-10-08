@@ -215,7 +215,7 @@ public class DocumentDao {
         documentDb.setAge(document.getAge());
         documentDb.setGender(document.getGender());
         documentDb.setExperience(document.getExperience());
-        documentDb.setSkills(document.getExperience());
+        documentDb.setSkills(document.getSkills());
         documentDb.setProgram(document.getProgram());
         documentDb.setSubject(document.getSubject());
         documentDb.setIdentifier(document.getIdentifier());

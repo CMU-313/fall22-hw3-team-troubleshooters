@@ -143,6 +143,12 @@ public class DocumentResource extends BaseResource {
      * @apiSuccess {String} files.version Zero-based version number
      * @apiSuccess {String} files.mimetype MIME type
      * @apiSuccess {String} files.create_date Create date (timestamp)
+     * @apiSuccess {String} program
+     * @apiSuccess {Number} int exp
+     * @apiSuccess {Number} int skills
+     * @apiSuccess {Number} int gpaVal
+     * @apiSuccess {String} gender
+     * @apiSuccess {Number} int ageYears
      * @apiError (client) NotFound Document not found
      * @apiPermission none
      * @apiVersion 1.5.0
@@ -174,11 +180,11 @@ public class DocumentResource extends BaseResource {
                 .add("language", documentDto.getLanguage())
                 .add("shared", documentDto.getShared())
                 .add("file_count", documentDto.getFileCount())
-                .add("program",documentDto.getProgram())
+                .add("program",JsonUtil.nullable(documentDto.getProgram()))
                 .add("experience",documentDto.getExperience())
                 .add("skills",documentDto.getSkills())
                 .add("gpa",documentDto.getGPA())
-                .add("gender",documentDto.getGender())
+                .add("gender",JsonUtil.nullable(documentDto.getGender()))
                 .add("age",documentDto.getAge());
 
         List<TagDto> tagDtoList = null;
@@ -396,6 +402,12 @@ public class DocumentResource extends BaseResource {
      * @apiSuccess {String} documents.files.version Zero-based version number
      * @apiSuccess {String} documents.files.mimetype MIME type
      * @apiSuccess {String} documents.files.create_date Create date (timestamp)
+     * @apiSuccess {String} documents.program
+     * @apiSuccess {Number} documents.exp
+     * @apiSuccess {Number} documents.skills
+     * @apiSuccess {Number} documents.gpaVal
+     * @apiSuccess {String} documents.gender
+     * @apiSuccess {Number} documents.ageYears
      * @apiSuccess {String[]} suggestions List of search suggestions
      * @apiError (client) ForbiddenError Access denied
      * @apiError (server) SearchError Error searching in documents
@@ -464,9 +476,6 @@ public class DocumentResource extends BaseResource {
                         .add("color", tagDto.getColor()));
             }
 
-            DocumentDao dao = new DocumentDao();
-            DocumentDto dto = dao.getDocument(documentDto.getId(), PermType.READ, getTargetIdList(null));
-
             JsonObjectBuilder documentObjectBuilder = Json.createObjectBuilder()
                     .add("id", documentDto.getId())
                     .add("highlight", JsonUtil.nullable(documentDto.getHighlight()))
@@ -481,17 +490,17 @@ public class DocumentResource extends BaseResource {
                     .add("current_step_name", JsonUtil.nullable(documentDto.getCurrentStepName()))
                     .add("file_count", documentDto.getFileCount())
                     .add("tags", tags)
-                    .add("program",dto.getProgram())
-                    .add("experience",dto.getExperience())
-                    .add("skills",dto.getSkills())
-                    .add("gpa",dto.getGPA())
-                    .add("gender",dto.getGender())
-                    .add("age",dto.getAge());
+                    .add("program",JsonUtil.nullable(documentDto.getProgram()))
+                    .add("experience",documentDto.getExperience())
+                    .add("skills",documentDto.getSkills())
+                    .add("gpa",documentDto.getGPA())
+                    .add("gender",JsonUtil.nullable(documentDto.getGender()))
+                    .add("age",documentDto.getAge());
 
             count += 1;
-            gpaSum += dto.getGPA();
-            expSum += dto.getExperience();
-            skillsSum += dto.getSkills();
+            gpaSum += documentDto.getGPA();
+            expSum += documentDto.getExperience();
+            skillsSum += documentDto.getSkills();
 
             if (Boolean.TRUE == files) {
                 JsonArrayBuilder filesArrayBuilder = Json.createArrayBuilder();

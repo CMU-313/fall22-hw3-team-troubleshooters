@@ -26,6 +26,7 @@ angular.module('docs').controller('Document', function ($scope, $rootScope, $tim
   
   /**
    * Load new documents page.
+   * Also loads the statistics calculated from the backend.
    */
   $scope.pageDocuments = function () {
     Restangular.one('document/list')
